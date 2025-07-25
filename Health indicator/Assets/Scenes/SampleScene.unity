@@ -301,7 +301,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 1182023638}
-  _isSmoothnesBar: 0
 --- !u!1 &442733065
 GameObject:
   m_ObjectHideFlags: 0
@@ -1020,11 +1019,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 808822795}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f20d9f113b2c7a340967cf0eb02c2014, type: 3}
+  m_Script: {fileID: 11500000, guid: fbae0562797807f4e9f91568554f9fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 1182023638}
-  _isSmoothnesBar: 1
+  _maxDelta: 0.1
 --- !u!1 &908836708
 GameObject:
   m_ObjectHideFlags: 0
