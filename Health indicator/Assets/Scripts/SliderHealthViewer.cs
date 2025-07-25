@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,9 +6,8 @@ using UnityEngine.UI;
 public class SliderHealthViewer : MonoBehaviour
 {
     [SerializeField] private Player _player;
-    [SerializeField] private bool _isSmoothnesBar;
 
-    private Slider _slider;
+    protected Slider _slider;
 
     private void Awake()
     {
@@ -30,29 +28,8 @@ public class SliderHealthViewer : MonoBehaviour
         _player.HealthUpdate -= ChangeSliderValue;
     }
 
-    private void ChangeSliderValue(float health)
+    protected virtual void ChangeSliderValue(float health)
     {
-        if (_isSmoothnesBar)
-        {
-            StartCoroutine(SmoothCahnge(health));
-        }
-        else
-        {
-            _slider.value = health;
-        }
-    }
-
-    private IEnumerator SmoothCahnge(float health)
-    {
-        float maxDelta = 0.15f;
-
-        while (_slider.value != health)
-        {
-            float changedHealth = Mathf.MoveTowards(_slider.value, health, maxDelta);
-            _slider.value = changedHealth;
-
-            yield return null;
-        }
-        yield break;
+        _slider.value = health;
     }
 }
