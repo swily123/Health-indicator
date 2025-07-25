@@ -17,12 +17,12 @@ public class TextHealthViewer : MonoBehaviour
 
     private void OnEnable()
     {
-        _player.HealthUpdate += ChangeText;
+        _player.HealthUpdated += ChangeText;
     }
 
     private void OnDisable()
     {
-        _player.HealthUpdate -= ChangeText;
+        _player.HealthUpdated -= ChangeText;
     }
 
     private void ChangeText(float health)

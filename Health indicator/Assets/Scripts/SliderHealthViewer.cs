@@ -20,12 +20,12 @@ public class SliderHealthViewer : MonoBehaviour
 
     private void OnEnable()
     {
-        _player.HealthUpdate += ChangeSliderValue;
+        _player.HealthUpdated += ChangeSliderValue;
     }
 
     private void OnDisable()
     {
-        _player.HealthUpdate -= ChangeSliderValue;
+        _player.HealthUpdated -= ChangeSliderValue;
     }
 
     protected virtual void ChangeSliderValue(float health)

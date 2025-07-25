@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
     private float _health;
 
     public float HealthMaxValue { get; private set; } = 100;
-    public event Action<float> HealthUpdate;
+    public event Action<float> HealthUpdated;
 
     private void Start()
     {
@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
         if (_health < 0)
             _health = 0;
 
-        HealthUpdate?.Invoke(_health);
+        HealthUpdated?.Invoke(_health);
     }
 
     public void Heal(float healAmount)
@@ -30,6 +30,6 @@ public class Player : MonoBehaviour
         if (_health > HealthMaxValue)
             _health = HealthMaxValue;
 
-        HealthUpdate?.Invoke(_health);
+        HealthUpdated?.Invoke(_health);
     }
 }

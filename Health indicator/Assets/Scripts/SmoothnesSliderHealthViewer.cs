@@ -21,6 +21,5 @@ public class SmoothnesSliderHealthViewer : SliderHealthViewer
 
             yield return null;
         }
-        yield break;
     }
 }
